@@ -149,6 +149,11 @@ public class Registros extends javax.swing.JFrame {
         lbMateria.setText("Materia");
 
         cbMateria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Desarrollo de Software", "Bases de Datos II", "Electronica", "Investigacion Operaciones", "Legislacion" }));
+        cbMateria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbMateria1ActionPerformed(evt);
+            }
+        });
 
         cbMateria2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Desarrollo de Software", "Bases de Datos II", "Electronica", "Investigacion Operaciones", "Legislacion" }));
 
@@ -247,12 +252,10 @@ public class Registros extends javax.swing.JFrame {
                                     .addComponent(cbUv4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbUv3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbUv2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbUv1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(cbUv1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbUv)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(lbUv)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
@@ -474,8 +477,8 @@ public class Registros extends javax.swing.JFrame {
         double totalUV = 0;
 
         for (int i = 0; i < notaFields.length; i++) {
-            double nota = Integer.parseInt(notaFields[i].getText());
-            double uv = Integer.parseInt(comboUV[i].getSelectedItem().toString());
+            double nota = Double.parseDouble(notaFields[i].getText());
+            double uv = Double.parseDouble(comboUV[i].getSelectedItem().toString());
 
             totalNotasUV += nota * uv;
             totalUV += uv;
@@ -572,6 +575,10 @@ public class Registros extends javax.swing.JFrame {
     private void tfNota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNota1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNota1ActionPerformed
+
+    private void cbMateria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMateria1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbMateria1ActionPerformed
 
     /**
      * @param args the command line arguments
