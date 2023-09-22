@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <form method="post" action="/ByteCode/ServletPrincipal?accion=Login" id="formLogin">
+
+            <div id="resultLogin"></div>
+            <div><h1>Iniciar Sesion</h1></div>
+            <div><label>Ususario: </label></div>
+            <div><input type="text" name="tfUsuario" placeholder="Ingresar Usuario" id="idtfUsuario"></div><br>
+            <div><label>Contraseña: </label></div>
+            <div><input type="password" name="tfContrasena" placeholder="******" id="idtfContraseña" ></div><br>
+            <div> <input type="submit" value="Iniciar Sesion"> </div><br>
+
+        </form>
+
+        
+        <button onclick="regresar()">Regresar</button>        
+        <script>
+            function regresar(){
+                window.history.back();
+            }
+        </script>
+    </body>
+</html>
