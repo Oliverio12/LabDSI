@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <welcome-file-list>
+        <welcome-file>
+            ServletPrincipal
+        </welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>ServletError</servlet-name>
+        <url-pattern>/ServletError</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletPrincipal</servlet-name>
+        <servlet-class>servlet.ServletPrincipal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletError</servlet-name>
+        <servlet-class>servlet.ServletError</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPrincipal</servlet-name>
+        <url-pattern>/ServletPrincipal</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ServletError</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/ServletError</location>
+    </error-page>
+</web-app>

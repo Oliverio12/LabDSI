@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Registrar Producto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            color: #f8f8f2;
+        }
+
+        form {
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: calc(100% - 30px);
+            padding: 15px;
+            margin: 5px 0;
+            border: none;
+            border-bottom: 2px solid #f39c12;
+            background-color: transparent;
+            border-radius: 0;
+            font-size: 18px;
+            color: #2c3e50;
+            transition: border-bottom 0.3s ease, color 0.3s ease;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-bottom: 2px solid #f39c12;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        input[type="submit"], button {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #34495e;
+            color: #f8f8f2;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: #f39c12;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        button:hover {
+            color: white;
+        }
+        
+     @media (max-width: 768px) {
+        
+         body {
+            height: auto;
+            padding: 20px;
+            overflow-y: auto;
+        }
+         form {
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+        }
+        .column {
+            width: 100%;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        input, textarea, input[type="submit"], button {
+            width: 80%;
+            font-size: 16px;
+            padding: 10px;
+        }
+        .buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<h1>Registrar Producto</h1>
+
+<form action="tu_script_de_procesamiento.php" method="post">
+    <div class="column">
+        <label for="nombreProducto">Nombre del Producto:</label><br>
+        <input type="text" id="nombreProducto" name="NombreProducto" maxlength="100" required><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="Descripcion" maxlength="255"></textarea><br>
+
+        <label for="precio">Precio:</label><br>
+        <input type="text" id="precio" name="Precio" required><br>
+    </div>
+    <div class="column">
+        <label for="inventario">ID Inventario:</label><br>
+        <input type="number" id="inventario" name="Id_Inventario" required><br>
+
+        <label for="marca">ID Marca:</label><br>
+        <input type="number" id="marca" name="Id_Marca" required><br>
+
+        <label for="categoria">ID Categoría:</label><br>
+        <input type="number" id="categoria" name="Id_Categoria" required><br>
+    </div>
+    <div class="buttons">
+        <input type="submit" value="Registrar">
+        <button onclick="regresar()">Regresar</button>
+    </div>
+</form>
+
+<script>
+    function regresar() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

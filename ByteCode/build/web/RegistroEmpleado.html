@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrar Empleado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #2c3e50;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                flex-direction: column;
+                color: #f8f8f2;
+            }
+
+            form {
+                width: 60%;  /* Ajustado para proporcionar más espacio */
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                display: flex;  /* Ajuste a flex */
+                flex-wrap: wrap;  /* Permitir que los elementos se muevan a la siguiente línea si es necesario */
+            }
+
+            h1 {
+                font-size: 32px;
+                color: white;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 100%;  /* Asegurarse de que el título se extienda a lo ancho del formulario */
+            }
+
+            .column {
+                flex: 1;  /* Permitir que cada columna crezca para usar todo el espacio disponible */
+                padding: 10px;  /* Añadir algo de relleno */
+            }
+
+            label {
+                font-weight: bold;
+                color: #2c3e50;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: calc(100% - 30px);  /* Ajuste de ancho */
+                padding: 15px;
+                margin: 5px 0;  /* Ajuste de margen */
+                border: none;
+                border-bottom: 2px solid #f39c12;
+                background-color: transparent;
+                border-radius: 0;
+                font-size: 18px;
+                color: #2c3e50;
+                transition: border-bottom 0.3s ease, color 0.3s ease;  /* Ajuste de transición */
+                outline: none;
+            }
+
+            input:focus {
+                border-bottom: 2px solid #f39c12;
+            }
+
+            .buttons {
+                width: 100%;  /* Asegurarse de que los botones se extiendan a lo ancho del formulario */
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+
+            input[type="submit"], button {
+                background-color: #f39c12;
+                color: #fff;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: bold;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            input[type="submit"]:hover, button:hover {
+                background-color: #34495e;
+                color: #f8f8f2;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: #f39c12;
+                font-size: 16px;
+                cursor: pointer;
+                text-decoration: underline;
+                transition: color 0.3s ease;
+            }
+
+            button:hover {
+                color: white;
+            }
+
+
+
+    @media (max-width: 768px) {
+        form {
+            width: 90%;  /* Ajusta el ancho del formulario en pantallas pequeñas */
+            padding: 15px;  /* Reduce el relleno */
+        }
+        h1 {
+            font-size: 24px;  /* Reduce el tamaño de la fuente */
+            margin-bottom: 10px;  /* Reduce el margen inferior */
+        }
+        .column {
+            padding: 5px;  /* Reduce el relleno */
+            flex: 1 0 100%;  /* Cambia la dirección de las columnas en una fila a una columna */
+        }
+        input, input[type="submit"], button {
+            padding: 10px;  /* Reduce el relleno */
+            font-size: 16px;  /* Reduce el tamaño de la fuente */
+        }
+    }
+        </style>    
+    </head>
+    <body>
+        <h1>Registrar Empleado</h1>
+
+        <form action="tu_script_de_procesamiento.php" method="post">
+
+
+
+            <div class="column">
+                <label for="nombres">Nombres:</label><br>
+                <input type="text" id="nombres" name="NombresEmpleado" maxlength="60" required><br>
+
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="ApellidosEmpleado" maxlength="60" required><br>
+
+                <label for="dui">DUI Empleado:</label><br>
+                <input type="text" id="dui" name="DUI_Empleado" maxlength="10" required><br>
+
+                <label for="isss">ISSS Empleado:</label><br>
+                <input type="number" id="isss" name="ISSS_Empleado" required><br>
+
+
+            </div>
+            <div class="column">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
+                <input type="date" id="fechaNacimiento" name="FechaNacEmpleado" required><br>
+
+                <label for="telefono">Teléfono:</label><br>
+                <input type="number" id="telefono" name="Telefono" min="0" required><br>
+
+                <label for="correo">Correo Electrónico:</label><br>
+                <input type="email" id="correo" name="Correo" maxlength="100"><br>
+
+                <label for="cargo">Cargo:</label><br>
+                <input type="number" id="cargo" name="Id_Cargo" required><br>
+
+                <label for="direccion">Dirección:</label><br>
+                <input type="number" id="direccion" name="Id_Direccion" required><br>
+            </div>
+
+            <input type="submit" value="Registrar">
+            <button onclick="regresar()">Regresar</button>        
+
+
+        </form>
+
+        <script>
+            function regresar() {
+                window.history.back();
+            }
+        </script>
+    </body>
+</html>
