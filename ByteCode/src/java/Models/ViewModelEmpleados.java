@@ -15,12 +15,14 @@ public class ViewModelEmpleados {
     private Date fechaNacEmpleado;
     private String telefono;
     private String correo;
+    private int id_Cargo;
+    private int id_Direccion;
     
 
     public ViewModelEmpleados() {
     }
 
-    public ViewModelEmpleados(int id_Empleado, String dui_Empleado, int isss_Empleado, String nombresEmpleado, String apellidosEmpleado, Date fechaNacEmpleado, String telefono, String correo) {
+    public ViewModelEmpleados(int id_Empleado, String dui_Empleado, int isss_Empleado, String nombresEmpleado, String apellidosEmpleado, Date fechaNacEmpleado, String telefono, String correo, int id_Cargo, int id_Direccion) {
         this.id_Empleado = id_Empleado;
         this.dui_Empleado = dui_Empleado;
         this.isss_Empleado = isss_Empleado;
@@ -29,7 +31,27 @@ public class ViewModelEmpleados {
         this.fechaNacEmpleado = fechaNacEmpleado;
         this.telefono = telefono;
         this.correo = correo;
+        this.id_Cargo = id_Cargo;
+        this.id_Direccion = id_Direccion;
     }
+
+    public int getId_Cargo() {
+        return id_Cargo;
+    }
+
+    public void setId_Cargo(int id_Cargo) {
+        this.id_Cargo = id_Cargo;
+    }
+
+    public int getId_Direccion() {
+        return id_Direccion;
+    }
+
+    public void setId_Direccion(int id_Direccion) {
+        this.id_Direccion = id_Direccion;
+    }
+
+    
 
     public int getId_Empleado() {
         return id_Empleado;

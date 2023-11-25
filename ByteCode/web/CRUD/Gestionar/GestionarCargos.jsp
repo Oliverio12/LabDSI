@@ -33,12 +33,12 @@
                             <td><c:out value="${item.id_Cargo}" /></td>
                             <td><c:out value="${item.cargo}" /></td>
                             <td class="text-center">
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">
+                                <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarCargo.jsp">
                                     <input type="hidden" name="Id_Cargo" value="${item.id_Cargo}" />
                                     <input type="hidden" name="cargo" value="${item.cargo}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Eliminar/EliminarCargo.jsp">
+                                <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarCargo.jsp">
                                     <input type="hidden" name="Id_Cargo" value="${item.id_Cargo}" />
                                     <input type="hidden" name="cargo" value="${item.cargo}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
@@ -51,7 +51,7 @@
         </div>
         <script>
             function regresar() {
-                window.history.back();
+                window.location.href = "index.html";
             }
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

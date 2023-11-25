@@ -17,7 +17,7 @@
 
             <div>
                 <button class="btn btn-primary mb-3" onclick="regresar()">Regresar</button>    
-                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarCargo">Agregar Empleado</a><br><br>
+                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarEmpleado">Agregar Empleado</a><br><br>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -30,6 +30,9 @@
                         <th>Fecha Nacimiento</th>
                         <th>Telefono</th>
                         <th>Correo</th>
+                        <th>ID Cargo</th>
+                        <th>ID Direccion</th>
+                        <th>Accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,15 +46,27 @@
                             <td><c:out value="${item.fechaNacEmpleado}" /></td>
                             <td><c:out value="${item.telefono}" /></td>
                             <td><c:out value="${item.correo}" /></td>
+                            <td><c:out value="${item.id_Cargo}" /></td>
+                            <td><c:out value="${item.id_Direccion}" /></td>
                             <td class="text-center">
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">
-                                    <input type="hidden" name="Id_Empleado" value="${item.id_Empleado}" />
+                                <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarEmpleado.jsp">
+                                    <input type="hidden" name="ID_Empleado" value="${item.id_Empleado}" />
                                     <input type="hidden" name="nombresEmpleado" value="${item.nombresEmpleado}" />             
+                                    <input type="hidden" name="apellidosEmpleado" value="${item.apellidosEmpleado}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Eliminar/EliminarCargo.jsp">
-                                    <input type="hidden" name="Id_Empleado" value="${item.id_Empleado}" />
-                                    <input type="hidden" name="nombresEmpleado" value="${item.nombresEmpleado}" />             
+                                <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarEmpleado.jsp">
+                                    <input type="hidden" name="ID_Empleado" value="${item.id_Empleado}" />
+                                    <input type="hidden" name="DUI_Empleado" value="${item.dui_Empleado}" />
+                                    <input type="hidden" name="ISSS_Empleado" value="${item.isss_Empleado}" />
+                                    <input type="hidden" name="nombresEmpleado" value="${item.nombresEmpleado}" />  
+                                    <input type="hidden" name="apellidosEmpleado" value="${item.apellidosEmpleado}" />             
+                                    <input type="hidden" name="fechaNacEmpleado" value="${item.fechaNacEmpleado}" />             
+                                    <input type="hidden" name="telefonoEmpleado" value="${item.telefono}" />             
+                                    <input type="hidden" name="correo" value="${item.correo}" />             
+                                    <input type="hidden" name="id_Cargo" value="${item.id_Cargo}" />             
+                                    <input type="hidden" name="id_Direccion" value="${item.id_Direccion}" />             
+
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>
@@ -62,7 +77,7 @@
         </div>
         <script>
             function regresar() {
-                window.history.back();
+                window.location.href = "index.html";
             }
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

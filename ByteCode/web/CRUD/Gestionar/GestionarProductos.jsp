@@ -61,7 +61,7 @@
         </div>
         <script>
             function regresar() {
-                window.history.back();
+                window.location.href = "index.html";
             }
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
