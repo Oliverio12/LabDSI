@@ -23,8 +23,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID Usuario</th>
-                        <th>ID Empleado</th>
-                        <th>ID Rol</th>
+                        <th>Nombres Empleado</th>
+                        <th>Rol</th>
                         <th>Usuario</th>
                         <th>Clave</th>
                         <th>Acciones</th>
@@ -34,8 +34,10 @@
                     <c:forEach items="${listaUsuarios}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Usuario}" /></td>
-                            <td><c:out value="${item.id_Empleado}" /></td>
-                            <td><c:out value="${item.id_Rol}" /></td>
+                            <!--<td><c:out value="${item.id_Empleado}" /></td>-->
+                            <td><c:out value="${item.nombreCompleto}" /></td>
+                            <!--<td><c:out value="${item.id_Rol}" /></td>-->
+                            <td><c:out value="${item.nombreRol}" /></td>
                             <td><c:out value="${item.usuario}" /></td>
                             <td><c:out value="${item.clave}" /></td>
                             <td class="text-center">

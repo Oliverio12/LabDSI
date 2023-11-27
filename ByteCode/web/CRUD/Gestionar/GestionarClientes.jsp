@@ -31,6 +31,7 @@
                         <th>Id DIreccion</th>
                         <th>Usuario</th>
                         <th>Clave</th>
+                        <th>Fecha de Registro</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
                             <td><c:out value="${item.id_Direccion}" /></td>
                             <td><c:out value="${item.usuario}" /></td>
                             <td><c:out value="${item.clave}" /></td>
+                            <td><c:out value="${item.fechaRegistro}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarCliente.jsp">
                                     <input type="hidden" name="id_Cliente" value="${item.id_Cliente}" />
@@ -55,6 +57,14 @@
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarCliente.jsp">
                                     <input type="hidden" name="id_Cliente" value="${item.id_Cliente}" />
                                     <input type="hidden" name="nombresCliente" value="${item.nombresCliente}" />             
+                                    <input type="hidden" name="apellidosCliente" value="${item.apellidosCliente}" />             
+                                    <input type="hidden" name="duiCliente" value="${item.duiCliente}" />             
+                                    <input type="hidden" name="telefono" value="${item.telefono}" />             
+                                    <input type="hidden" name="correo" value="${item.correo}" />             
+                                    <input type="hidden" name="id_Direccion" value="${item.id_Direccion}" />             
+                                    <input type="hidden" name="usuario" value="${item.usuario}" />             
+                                    <input type="hidden" name="clave" value="${item.clave}" />             
+                                    <input type="hidden" name="fechaRegistro" value="${item.fechaRegistro}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>

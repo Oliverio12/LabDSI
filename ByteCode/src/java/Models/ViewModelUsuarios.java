@@ -3,17 +3,20 @@ package Models;
 public class ViewModelUsuarios {
     private int id_Usuario;
     private int id_Empleado;
+    private String nombreCompleto;
     private int id_Rol;
+    private String nombreRol;
     private String usuario;
     private String clave;
 
     public ViewModelUsuarios() {
     }
 
-    public ViewModelUsuarios(int id_Usuario, int id_Empleado, int id_Rol, String usuario, String clave) {
+    public ViewModelUsuarios(int id_Usuario, int id_Empleado, String nombreCompleto, String nombreRol, String usuario, String clave) {
         this.id_Usuario = id_Usuario;
         this.id_Empleado = id_Empleado;
-        this.id_Rol = id_Rol;
+        this.nombreCompleto = nombreCompleto;
+        this.nombreRol = nombreRol;
         this.usuario = usuario;
         this.clave = clave;
     }
@@ -34,12 +37,28 @@ public class ViewModelUsuarios {
         this.id_Empleado = id_Empleado;
     }
 
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
     public int getId_Rol() {
         return id_Rol;
     }
 
     public void setId_Rol(int id_Rol) {
         this.id_Rol = id_Rol;
+    }
+
+    public String getNombreRol() {
+        return nombreRol;
+    }
+
+    public void setNombreRol(String nombreRol) {
+        this.nombreRol = nombreRol;
     }
 
     public String getUsuario() {
@@ -58,7 +77,6 @@ public class ViewModelUsuarios {
         this.clave = clave;
     }
 
-    
     
     
 }

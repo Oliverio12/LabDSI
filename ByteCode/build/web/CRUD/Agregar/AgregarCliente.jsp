@@ -36,8 +36,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dui_Cliente">DUI: </label>
-                        <input type="text" class="form-control" name="dui_Cliente" id="dui_Cliente" required>
+                        <label for="duiCliente">DUI: </label>
+                        <input type="text" class="form-control" name="duiCliente" id="duiCliente" required>
                     </div>
 
                     <div class="form-group">

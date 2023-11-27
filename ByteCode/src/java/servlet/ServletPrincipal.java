@@ -25,6 +25,7 @@ import Models.ViewModelDescuento;
 import Models.ViewModelDetalleCompra;
 import Models.ViewModelDetalleVenta;
 import Models.ViewModelEmpleados;
+import Models.ViewModelGrupos;
 import Models.ViewModelInventario;
 import Models.ViewModelMetodosPago;
 import Models.ViewModelPagos;
@@ -77,6 +78,33 @@ public class ServletPrincipal extends HttpServlet {
         }
     }//Fin de cargos
 
+    //Inicio Grupos
+    public void mostrarGrupo(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+                String sqlQuery = "select * from  Grupos.Grupo";
+                PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+                ResultSet rs = pstmt.executeQuery();
+                ArrayList<ViewModelGrupos> listaTurno = new ArrayList<>();
+                while (rs.next()) {
+                    ViewModelGrupos cargo = new ViewModelGrupos();
+                    cargo.setId_Grupo(rs.getInt("Id_Grupo"));
+                    cargo.setId_Empleado(rs.getInt("Id_Empleado"));
+                    cargo.setTurno(rs.getString("Turno"));
+                    listaTurno.add(cargo);
+                }
+                request.setAttribute("listaTurno", listaTurno);
+
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.setAttribute("mensaje_conexion", ex.getMessage());
+            ex.printStackTrace();
+        }
+    }//Fin de grupos
+
     //empleados
     public void mostrarEmpleados(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -84,7 +112,7 @@ public class ServletPrincipal extends HttpServlet {
 
             try (Connection conn = DriverManager.getConnection(url)) {
                 request.setAttribute("mensaje_conexion", "Ok!");
-                String sqlQuery = "select * from  Persona.Empleados";
+                String sqlQuery = "select * from  VistaEmpleadoDireccion";
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
                 ResultSet rs = pstmt.executeQuery();
 
@@ -102,7 +130,9 @@ public class ServletPrincipal extends HttpServlet {
                     empleado.setTelefono(rs.getString("Telefono"));
                     empleado.setCorreo(rs.getString("Correo"));
                     empleado.setId_Cargo(rs.getInt("Id_Cargo"));
+                    empleado.setCargo(rs.getString("CargoEmpleado"));
                     empleado.setId_Direccion(rs.getInt("Id_Direccion"));
+                    empleado.setDireccionCompleta(rs.getString("Direccion"));
 
                     listaEmpleados.add(empleado);
                 }
@@ -122,7 +152,7 @@ public class ServletPrincipal extends HttpServlet {
 
             try (Connection conn = DriverManager.getConnection(url)) {
                 request.setAttribute("mensaje_conexion", "Ok!");
-                String sqlQuery = "select * from  Rol.Usuarios";
+                String sqlQuery = "select * from  VistaUsuarios ";
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
                 ResultSet rs = pstmt.executeQuery();
 
@@ -132,7 +162,9 @@ public class ServletPrincipal extends HttpServlet {
                     ViewModelUsuarios user = new ViewModelUsuarios();
                     user.setId_Usuario(rs.getInt("Id_Usuario"));
                     user.setId_Empleado(rs.getInt("Id_Empleado"));
+                    user.setNombreCompleto(rs.getString("nombreCompleto"));
                     user.setId_Rol(rs.getInt("Id_Rol"));
+                    user.setNombreRol(rs.getString("NombreRol"));
                     user.setUsuario(rs.getString("Usuario"));
                     user.setClave(rs.getString("Clave"));
                     listaUsuarios.add(user);
@@ -154,7 +186,13 @@ public class ServletPrincipal extends HttpServlet {
 
             try (Connection conn = DriverManager.getConnection(url)) {
                 request.setAttribute("mensaje_conexion", "Ok!");
-                String sqlQuery = "select * from  Cliente.Clientes";
+                String sqlQuery = "select\n"
+                        + "    C.*,\n"
+                        + "    R.FechaRegistro\n"
+                        + "FROM\n"
+                        + "    Cliente.Clientes C\n"
+                        + "left join\n"
+                        + "    Cliente.RegistroClientes R ON C.Id_Cliente = R.Id_Cliente;";
                 PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
                 ResultSet rs = pstmt.executeQuery();
 
@@ -171,6 +209,7 @@ public class ServletPrincipal extends HttpServlet {
                     cliente.setId_Direccion(rs.getInt("Id_Direccion"));
                     cliente.setUsuario(rs.getString("Usuario"));
                     cliente.setClave(rs.getString("Clave"));
+                    cliente.setFechaRegistro(rs.getString("FechaRegistro"));
                     listaClientes.add(cliente);
                 }
                 request.setAttribute("listaClientes", listaClientes);
@@ -625,7 +664,7 @@ public class ServletPrincipal extends HttpServlet {
 
         String nombresCliente = request.getParameter("nombresCliente");
         String apellidosCliente = request.getParameter("apellidosCliente");
-        String dui_Cliente = request.getParameter("dui_Cliente");
+        String duiCliente = request.getParameter("duiCliente");
         String telefono = request.getParameter("telefono");
         String correo = request.getParameter("correo");
         String id_Direccion = request.getParameter("id_Direccion");
@@ -640,7 +679,7 @@ public class ServletPrincipal extends HttpServlet {
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, nombresCliente);
                 pstmt.setString(2, apellidosCliente);
-                pstmt.setString(3, dui_Cliente);
+                pstmt.setString(3, duiCliente);
                 pstmt.setString(4, telefono);
                 pstmt.setString(5, correo);
                 pstmt.setString(6, id_Direccion);
@@ -660,7 +699,7 @@ public class ServletPrincipal extends HttpServlet {
         }
     }
     //Fin Cliente Insert
-    
+
     //FUNCIONES DE UPDATE-------------------------------------------------------------------
     //Update Empleado
     public void modificarEmpleado(HttpServletRequest request, HttpServletResponse response) {
@@ -780,13 +819,12 @@ public class ServletPrincipal extends HttpServlet {
         String id_Cliente = request.getParameter("id_Cliente");
         String nombresClietne = request.getParameter("nombresCliente");
         String ApellidosCliente = request.getParameter("apellidosCliente");
-        String Dui_CLiente = request.getParameter("dui_Cliente");
+        String duiCliente = request.getParameter("duiCliente");
         String Telefono = request.getParameter("telefono");
         String Correo = request.getParameter("correo");
         String Id_Direccion = request.getParameter("id_Direccion");
         String Usuario = request.getParameter("usuario");
         String Clave = request.getParameter("clave");
-        String FechaRegistro = request.getParameter("fechaRegistro");
 
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -796,13 +834,12 @@ public class ServletPrincipal extends HttpServlet {
                 String sql = "update Cliente.Clientes set "
                         + "NombresCliente='" + nombresClietne + "', "
                         + "ApellidosCliente='" + ApellidosCliente + "', "
-                        + "DUI_Cliente='" + Dui_CLiente + "', "
-                        + "Telefono='" + Telefono + "' "
-                        + "Correo='" + Correo + "' "
-                        + "Id_Direccion='" + Id_Direccion + "' "
-                        + "Usuario='" + Usuario + "' "
+                        + "DUI_Cliente='" + duiCliente + "', "
+                        + "Telefono='" + Telefono + "', "
+                        + "Correo='" + Correo + "' ,"
+                        + "Id_Direccion='" + Id_Direccion + "' ,"
+                        + "Usuario='" + Usuario + "', "
                         + "Clave='" + Clave + "' "
-                        + "FechaRegistro='" + FechaRegistro + "' "
                         + "where Id_Cliente='" + id_Cliente + "'";
 
                 PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -819,7 +856,7 @@ public class ServletPrincipal extends HttpServlet {
         }
     }
     //Fin Update Cliente
-    
+
     //FUNCIONES DE DELETE ---------------------------------------------------------------
     //Delete Empleado
     public void eliminarEmpleado(HttpServletRequest request, HttpServletResponse response) {
@@ -889,7 +926,7 @@ public class ServletPrincipal extends HttpServlet {
         }
     }
     //Fin Delete Usuarios
-    
+
     //Delete Cliente
     public void eliminarCliente(HttpServletRequest request, HttpServletResponse response) {
         String ID_Cliente = request.getParameter("id_Cliente");
@@ -912,8 +949,7 @@ public class ServletPrincipal extends HttpServlet {
         }
     }
     //Fin Delete Usuarios
-    
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -981,6 +1017,9 @@ public class ServletPrincipal extends HttpServlet {
         } else if (accion.equals("GestionarCarritos")) {
             mostrarDetallesVenta(request, response);
             request.getRequestDispatcher("/CRUD/Gestionar/GestionarDetalleVentas.jsp").forward(request, response);
+        } else if (accion.equals("GestionarGrupos")) {
+            mostrarGrupo(request, response);
+            request.getRequestDispatcher("/CRUD/Gestionar/GestionarGrupos.jsp").forward(request, response);
         } else if (accion.equals("AgregarEmpleado")) {
             if (request.getSession().getAttribute("exito") != null) {
                 request.setAttribute("exito", request.getSession().getAttribute("exito"));
@@ -999,15 +1038,14 @@ public class ServletPrincipal extends HttpServlet {
                 request.getSession().removeAttribute("exito");
             }
             request.getRequestDispatcher("CRUD/Agregar/AgregarUsuario.jsp").forward(request, response);
-        }else if (accion.equals("AgregarCliente")) {
+        } else if (accion.equals("AgregarCliente")) {
             if (request.getSession().getAttribute("exito") != null) {
                 request.setAttribute("exito", request.getSession().getAttribute("exito"));
                 request.getSession().removeAttribute("exito");
             }
             request.getRequestDispatcher("CRUD/Agregar/AgregarCliente.jsp").forward(request, response);
         }
-        
-        
+
     }
 
     @Override
@@ -1064,7 +1102,7 @@ public class ServletPrincipal extends HttpServlet {
         } else if (accion.equals("EliminarUsuario")) {
             eliminarUsuario(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarUsuarios");
-        }else if (accion.equals("AgregarCliente")) {
+        } else if (accion.equals("AgregarCliente")) {
             agregarCliente(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarCliente");
         } else if (accion.equals("ModificarCliente")) {

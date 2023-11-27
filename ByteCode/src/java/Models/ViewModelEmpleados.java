@@ -16,13 +16,15 @@ public class ViewModelEmpleados {
     private String telefono;
     private String correo;
     private int id_Cargo;
+    private String cargo;
     private int id_Direccion;
+    private String direccionCompleta;
     
 
     public ViewModelEmpleados() {
     }
 
-    public ViewModelEmpleados(int id_Empleado, String dui_Empleado, int isss_Empleado, String nombresEmpleado, String apellidosEmpleado, Date fechaNacEmpleado, String telefono, String correo, int id_Cargo, int id_Direccion) {
+    public ViewModelEmpleados(int id_Empleado, String dui_Empleado, int isss_Empleado, String nombresEmpleado, String apellidosEmpleado, Date fechaNacEmpleado, String telefono, String correo, int id_Cargo, String cargo, int id_Direccion, String direccionCompleta) {
         this.id_Empleado = id_Empleado;
         this.dui_Empleado = dui_Empleado;
         this.isss_Empleado = isss_Empleado;
@@ -32,26 +34,10 @@ public class ViewModelEmpleados {
         this.telefono = telefono;
         this.correo = correo;
         this.id_Cargo = id_Cargo;
+        this.cargo = cargo;
         this.id_Direccion = id_Direccion;
+        this.direccionCompleta = direccionCompleta;
     }
-
-    public int getId_Cargo() {
-        return id_Cargo;
-    }
-
-    public void setId_Cargo(int id_Cargo) {
-        this.id_Cargo = id_Cargo;
-    }
-
-    public int getId_Direccion() {
-        return id_Direccion;
-    }
-
-    public void setId_Direccion(int id_Direccion) {
-        this.id_Direccion = id_Direccion;
-    }
-
-    
 
     public int getId_Empleado() {
         return id_Empleado;
@@ -117,5 +103,38 @@ public class ViewModelEmpleados {
         this.correo = correo;
     }
 
+    public int getId_Cargo() {
+        return id_Cargo;
+    }
+
+    public void setId_Cargo(int id_Cargo) {
+        this.id_Cargo = id_Cargo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public int getId_Direccion() {
+        return id_Direccion;
+    }
+
+    public void setId_Direccion(int id_Direccion) {
+        this.id_Direccion = id_Direccion;
+    }
+
+    public String getDireccionCompleta() {
+        return direccionCompleta;
+    }
+
+    public void setDireccionCompleta(String direccionCompleta) {
+        this.direccionCompleta = direccionCompleta;
+    }
+
+    
     
 }
