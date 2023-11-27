@@ -17,16 +17,16 @@
             <h1 class="display-4">Modificar empleado</h1>
             <form method="POST" action="/ByteCode/ServletPrincipal?accion=ModificarEmpleado">
                 <div class="mb-3">
-                    <label for="ID_Empleado" class="form-label">ID Empleado:</label>
-                    <input type="text" class="form-control" name="ID_Empleado" id="ID_Empleado" value="${param.ID_Empleado}" readonly />
+                    <label for="id_Empleado" class="form-label">ID Empleado:</label>
+                    <input type="text" class="form-control" name="id_Empleado" id="id_Empleado" value="${param.id_Empleado}" readonly />
                 </div>
                 <div class="mb-3">
-                    <label for="DUI_Empleado" class="form-label">DUI:</label>
-                    <input type="text" class="form-control" name="DUI_Empleado" id="DUI_Empleado" value="${param.DUI_Empleado}" required />
+                    <label for="dui_Empleado" class="form-label">DUI:</label>
+                    <input type="text" class="form-control" name="dui_Empleado" id="dui_Empleado" value="${param.dui_Empleado}" required />
                 </div>
                 <div class="mb-3">
-                    <label for="ISSS_Empleado" class="form-label">Número de afiliado ISSS:</label>
-                    <input type="text" class="form-control" name="ISSS_Empleado" id="ISSS_Empleado" value="${param.ISSS_Empleado}" required />
+                    <label for="isss_Empleado" class="form-label">Número de afiliado ISSS:</label>
+                    <input type="text" class="form-control" name="isss_Empleado" id="isss_Empleado" value="${param.isss_Empleado}" required />
                 </div>
                 <div class="mb-3">
                     <label for="nombresEmpleado" class="form-label">Nombres:</label>
@@ -41,21 +41,23 @@
                     <input type="date" class="form-control" name="fechaNacEmpleado" id="fechaNacEmpleado" value="${param.fechaNacEmpleado}" required />
                 </div>
                 <div class="mb-3">
-                    <label for="telefonoEmpleado" class="form-label">Teléfono:</label>
-                    <input type="text" class="form-control" name="telefonoEmpleado" id="telefonoEmpleado" value="${param.telefonoEmpleado}" required />
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" name="telefono" id="telefono" value="${param.telefono}" required />
                 </div>
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo:</label>
                     <input type="email" class="form-control" name="correo" id="correo" value="${param.correo}" required />
                 </div>
                 <div class="mb-3">
-                    <label for="ID_Cargo" class="form-label">ID Cargo:</label>
-                    <input type="text" class="form-control" name="ID_Cargo" id="ID_Cargo" value="${param.ID_Cargo}" required />
+                    <label for="id_Cargo" class="form-label">ID Cargo:</label>
+                    <input type="text" class="form-control" name="id_Cargo" id="id_Cargo" value="${param.id_Cargo}" required />
                 </div>
+                
                 <div class="mb-3">
-                    <label for="ID_Direccion" class="form-label">ID Dirección:</label>
-                    <input type="text" class="form-control" name="ID_Direccion" id="ID_Direccion" value="${param.ID_Direccion}" required />
+                    <label for="id_Direccion" class="form-label">ID Dirección:</label>
+                    <input type="text" class="form-control" name="id_Direccion" id="id_Direccion" value="${param.id_Direccion}" required />
                 </div>
+                
 
                 <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea modificar el empleado?')">Modificar</button>
             </form>

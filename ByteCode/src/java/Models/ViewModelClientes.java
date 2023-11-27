@@ -17,6 +17,7 @@ public class ViewModelClientes {
     private String telefono;
     private String correo;
     private int id_Direccion;
+    private String direccionCompleta;
     private String usuario;
     private String clave;
     private String fechaRegistro;
@@ -24,7 +25,7 @@ public class ViewModelClientes {
     public ViewModelClientes() {
     }
 
-    public ViewModelClientes(int id_Cliente, String nombresCliente, String apellidosCliente, String duiCliente, String telefono, String correo, int id_Direccion, String usuario, String clave, String fechaRegistro) {
+    public ViewModelClientes(int id_Cliente, String nombresCliente, String apellidosCliente, String duiCliente, String telefono, String correo, int id_Direccion, String direccionCompleta, String usuario, String clave, String fechaRegistro) {
         this.id_Cliente = id_Cliente;
         this.nombresCliente = nombresCliente;
         this.apellidosCliente = apellidosCliente;
@@ -32,10 +33,21 @@ public class ViewModelClientes {
         this.telefono = telefono;
         this.correo = correo;
         this.id_Direccion = id_Direccion;
+        this.direccionCompleta = direccionCompleta;
         this.usuario = usuario;
         this.clave = clave;
         this.fechaRegistro = fechaRegistro;
     }
+
+    public String getDireccionCompleta() {
+        return direccionCompleta;
+    }
+
+    public void setDireccionCompleta(String direccionCompleta) {
+        this.direccionCompleta = direccionCompleta;
+    }
+
+   
 
     public int getId_Cliente() {
         return id_Cliente;

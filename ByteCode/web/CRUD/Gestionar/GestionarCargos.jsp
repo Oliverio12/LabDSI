@@ -34,12 +34,12 @@
                             <td><c:out value="${item.cargo}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarCargo.jsp">
-                                    <input type="hidden" name="Id_Cargo" value="${item.id_Cargo}" />
+                                    <input type="hidden" name="id_Cargo" value="${item.id_Cargo}" />
                                     <input type="hidden" name="cargo" value="${item.cargo}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarCargo.jsp">
-                                    <input type="hidden" name="Id_Cargo" value="${item.id_Cargo}" />
+                                    <input type="hidden" name="id_Cargo" value="${item.id_Cargo}" />
                                     <input type="hidden" name="cargo" value="${item.cargo}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>

@@ -76,19 +76,21 @@
                             <td class="text-center">
 
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarEmpleado.jsp">
-                                    <input type="hidden" name="ID_Empleado" value="${item.id_Empleado}" />
+                                    <input type="hidden" name="id_Empleado" value="${item.id_Empleado}" />
                                     <input type="hidden" name="nombresEmpleado" value="${item.nombresEmpleado}" />             
                                     <input type="hidden" name="apellidosEmpleado" value="${item.apellidosEmpleado}" />             
+                                    <input type="hidden" name="id_Cargo" value="${item.id_Cargo}" />             
+                                    <input type="hidden" name="id_Direccion" value="${item.id_Direccion}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarEmpleado.jsp">
-                                    <input type="hidden" name="ID_Empleado" value="${item.id_Empleado}" />
-                                    <input type="hidden" name="DUI_Empleado" value="${item.dui_Empleado}" />
-                                    <input type="hidden" name="ISSS_Empleado" value="${item.isss_Empleado}" />
+                                    <input type="hidden" name="id_Empleado" value="${item.id_Empleado}" />
+                                    <input type="hidden" name="dui_Empleado" value="${item.dui_Empleado}" />
+                                    <input type="hidden" name="isss_Empleado" value="${item.isss_Empleado}" />
                                     <input type="hidden" name="nombresEmpleado" value="${item.nombresEmpleado}" />  
                                     <input type="hidden" name="apellidosEmpleado" value="${item.apellidosEmpleado}" />             
                                     <input type="hidden" name="fechaNacEmpleado" value="${item.fechaNacEmpleado}" />             
-                                    <input type="hidden" name="telefonoEmpleado" value="${item.telefono}" />             
+                                    <input type="hidden" name="telefono" value="${item.telefono}" />             
                                     <input type="hidden" name="correo" value="${item.correo}" />             
                                     <input type="hidden" name="id_Cargo" value="${item.id_Cargo}" />             
                                     <input type="hidden" name="id_Direccion" value="${item.id_Direccion}" />             
@@ -117,7 +119,7 @@
                                     <label class="font-weight-bold">Nombres: <span id="nombresEmpleado" class="text-info"></span></label><br>
                                     <label class="font-weight-bold">Apellidos: <span id="apellidosEmpleado" class="text-info"></span></label><br>
                                     <label class="font-weight-bold">Fecha de nacimiento: <span id="fechaNacEmpleado" class="text-info"></span></label><br>
-                                    <label class="font-weight-bold">Teléfono: <span id="telefonoEmpleado" class="text-info"></span></label><br>
+                                    <label class="font-weight-bold">Teléfono: <span id="telefono" class="text-info"></span></label><br>
                                     <label class="font-weight-bold">Correo: <span id="correo" class="text-info"></span></label><br>
                                     <label class="font-weight-bold">Cargo: <span id="cargo" class="text-info"></span></label><br>
                                     <label class="font-weight-bold">Dirección: <span id="direccionCompleta" class="text-info"></span></label><br><br>
@@ -144,14 +146,14 @@
                 }
             }
 
-            function mostrarDetallesEmpleado(id_Empleado, dui_Empleado, isss_Empleado, nombresEmpleado, apellidosEmpleado, fechaNacEmpleado, telefonoEmpleado, correo, cargo, direccionCompleta) {
+            function mostrarDetallesEmpleado(id_Empleado, dui_Empleado, isss_Empleado, nombresEmpleado, apellidosEmpleado, fechaNacEmpleado, telefono, correo, cargo, direccionCompleta) {
                 document.getElementById('id_Empleado').textContent = id_Empleado;
                 document.getElementById('dui_Empleado').textContent = dui_Empleado;
                 document.getElementById('isss_Empleado').textContent = isss_Empleado;
                 document.getElementById('nombresEmpleado').textContent = nombresEmpleado;
                 document.getElementById('apellidosEmpleado').textContent = apellidosEmpleado;
                 document.getElementById('fechaNacEmpleado').textContent = fechaNacEmpleado;
-                document.getElementById('telefonoEmpleado').textContent = telefonoEmpleado;
+                document.getElementById('telefono').textContent = telefono;
                 document.getElementById('correo').textContent = correo;
                 document.getElementById('cargo').textContent = cargo;
                 document.getElementById('direccionCompleta').textContent = direccionCompleta;

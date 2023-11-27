@@ -4,24 +4,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar Cargo</title>
+        <title>Eliminar Marca</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     </head>
     <body>
         <div class="container mt-5 mb-5 border p-4">
-        <h1>Eliminar Cargo</h1>
+        <h1>Eliminar Marca</h1>
 
-        <form method="POST" action="/ByteCode/ServletPrincipal?accion=EliminarCargo">
+        <form method="POST" action="/ByteCode/ServletPrincipal?accion=EliminarMarca">
             <div class="form-group">
-                <label class="font-weight-bold">ID Cargo ${param.id_Cargo}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.cargo}</label><br>
+                <label class="font-weight-bold">ID Marca: ${param.id_Marca}</label><br>
+                <label class="font-weight-bold">Marca del Producto: ${param.nombreMarca}</label><br>
                 
-                <input type="hidden" name="id_Cargo" id="id_Cargo" value="${param.id_Cargo}" /><br><br>
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Desea eliminar el cargo?')">Eliminar</button><br><br>
+                <input type="hidden" name="id_Marca" id="id_Marca" value="${param.id_Marca}" /><br><br>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Desea eliminar la Marca?')">Eliminar</button><br><br>
             </div>
             <div>
-                <a class="btn btn-secondary" href="/ByteCode/?accion=GestionarCargos">Regresar</a><br><br>
+                <a class="btn btn-secondary" href="/ByteCode/?accion=GestionarMarca">Regresar</a><br><br>
             </div>             
         </form>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

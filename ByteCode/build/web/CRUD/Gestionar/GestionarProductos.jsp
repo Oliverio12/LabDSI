@@ -26,9 +26,9 @@
                         <th>Producto</th>
                         <th>Descripcion</th>
                         <th>Precio</th>
-                        <th>ID Inventario</th>
-                        <th>ID Marca</th>
-                        <th>ID Categoria</th>
+                        <th>Inventario</th>
+                        <th>Marca</th>
+                        <th>Categoria</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -39,9 +39,12 @@
                             <td><c:out value="${item.nombreProducto}" /></td>
                             <td><c:out value="${item.descripcion}" /></td>
                             <td><c:out value="${item.precio}" /></td>
-                            <td><c:out value="${item.id_Inventario}" /></td>
-                            <td><c:out value="${item.id_Marca}" /></td>
-                            <td><c:out value="${item.id_Categoria}" /></td>
+                            <!--<td><c:out value="${item.id_Inventario}" /></td>-->
+                            <td><c:out value="${item.inventario}" /></td>
+                            <!--<td><c:out value="${item.id_Marca}" /></td>-->
+                            <td><c:out value="${item.marca}" /></td>
+                            <!--<td><c:out value="${item.id_Categoria}" /></td>-->
+                            <td><c:out value="${item.categoria}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">
                                     <input type="hidden" name="id_Producto" value="${item.id_Producto}" />

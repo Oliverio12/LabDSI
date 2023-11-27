@@ -11,22 +11,54 @@ public class ViewModelProductos {
     private String descripcion;
     private double precio;
     private int id_Inventario;
+    private String inventario;
     private int id_Marca;
+    private String marca;
     private int id_Categoria;
+    private String categoria;
 
     public ViewModelProductos() {
     }
 
-    public ViewModelProductos(int id_Producto, String nombreProducto, String descripcion, double precio, int id_Inventario, int id_Marca, int id_Categoria) {
+    public ViewModelProductos(int id_Producto, String nombreProducto, String descripcion, double precio, int id_Inventario, String inventario, int id_Marca, String marca, int id_Categoria, String categoria) {
         this.id_Producto = id_Producto;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.precio = precio;
         this.id_Inventario = id_Inventario;
+        this.inventario = inventario;
         this.id_Marca = id_Marca;
+        this.marca = marca;
         this.id_Categoria = id_Categoria;
+        this.categoria = categoria;
     }
 
+    public String getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(String inventario) {
+        this.inventario = inventario;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    
+    
     public int getId_Producto() {
         return id_Producto;
     }

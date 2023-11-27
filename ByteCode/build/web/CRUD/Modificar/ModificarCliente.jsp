@@ -7,14 +7,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificar Empleado</title>
+        <title>Modificar Cliente</title>
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>   
         <!-- Contenido de tu página -->
         <div class="container mt-4 mb-5 p-4 border">
-            <h1 class="display-4">Modificar empleado</h1>
+            <h1 class="display-4">Modificar Cliente</h1>
             <form method="POST" action="/ByteCode/ServletPrincipal?accion=ModificarCliente">
                 <div class="mb-3">
                     <label for="id_Cliente" class="form-label">ID Cliente:</label>

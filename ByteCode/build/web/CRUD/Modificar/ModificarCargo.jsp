@@ -14,10 +14,14 @@
             <h1 class="display-4">Modificar Cargo</h1>
             <form method="POST" action="/ByteCode/ServletPrincipal?accion=ModificarCargo">
                 <div class="mb-3">
-                    <label for="Cargo" class="form-label">Cargo</label>
-                    <input type="text" class="form-control" name="Cargo" id="Cargo" value="${param.cargo}" required />
+                    <label for="id_Cargo" class="form-label">ID Cargo</label>
+                    <input type="text" class="form-control" name="id_Cargo" id="id_Cargo" value="${param.id_Cargo}" required />
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea modificar el empleado?')">Modificar</button>
+                <div class="mb-3">
+                    <label for="cargo" class="form-label">Cargo</label>
+                    <input type="text" class="form-control" name="cargo" id="cargo" value="${param.cargo}" required />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea modificar el Cargo?')">Modificar</button>
             </form>
             <div class="mt-3">
                 <a href="/ByteCode/?accion=GestionarCargos" class="btn btn-secondary">Regresar</a>

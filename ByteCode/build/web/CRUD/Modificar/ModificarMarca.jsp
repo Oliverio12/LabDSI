@@ -12,19 +12,19 @@
     <body>   
         <div class="container mt-4 border p-4">
             <h1 class="display-4">Modificar Cargo</h1>
-            <form method="POST" action="/ByteCode/ServletPrincipal?accion=ModificarCargo">
+            <form method="POST" action="/ByteCode/ServletPrincipal?accion=ModificarMarca">
                 <div class="mb-3">
-                    <label for="id_Cargo" class="form-label">ID Cargo</label>
-                    <input type="text" class="form-control" name="id_Cargo" id="id_Cargo" value="${param.id_Cargo}" required />
+                    <label for="id_Marca" class="form-label">ID Marca</label>
+                    <input type="text" class="form-control" name="id_Marca" id="id_Marca" value="${param.id_Marca}" readonly />
                 </div>
                 <div class="mb-3">
-                    <label for="cargo" class="form-label">Cargo</label>
-                    <input type="text" class="form-control" name="cargo" id="cargo" value="${param.cargo}" required />
+                    <label for="nombreMarca" class="form-label">Marca</label>
+                    <input type="text" class="form-control" name="nombreMarca" id="nombreMarca" value="${param.nombreMarca}" required />
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea modificar el Cargo?')">Modificar</button>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea modificar la Marca?')">Modificar</button>
             </form>
             <div class="mt-3">
-                <a href="/ByteCode/?accion=GestionarCargos" class="btn btn-secondary">Regresar</a>
+                <a href="/ByteCode/?accion=GestionarMarca" class="btn btn-secondary">Regresar</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
