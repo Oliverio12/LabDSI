@@ -10,18 +10,30 @@ public class ViewModelDescuento {
 
     private int id_Descuento;
     private int id_Producto;
+    private String producto;
     private double porcentajeDescuento;
     private Date fechaInicio;
     private Date fechaFinal;
 
-    public ViewModelDescuento(int id_Descuento, int id_Producto, double porcentajeDescuento, Date fechaInicio, Date fechaFinal) {
+    public ViewModelDescuento(int id_Descuento, int id_Producto, String producto, double porcentajeDescuento, Date fechaInicio, Date fechaFinal) {
         this.id_Descuento = id_Descuento;
         this.id_Producto = id_Producto;
+        this.producto = producto;
         this.porcentajeDescuento = porcentajeDescuento;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
     }
 
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    
+    
     public ViewModelDescuento() {
     }
 

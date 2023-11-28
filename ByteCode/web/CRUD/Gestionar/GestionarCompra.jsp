@@ -42,7 +42,8 @@
                             <td><c:out value="${item.fecha_Compra}" /></td>
                             <td><c:out value="${item.total}" /></td>
                             <td><c:out value="${item.estado}" /></td>
-                            <td><c:out value="${item.id_Empleado}" /></td>
+                            <!--<td><c:out value="${item.id_Empleado}" /></td>-->
+                            <td><c:out value="${item.empleado}" /></td>
                             <td><c:out value="${item.descripcionCompra}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">

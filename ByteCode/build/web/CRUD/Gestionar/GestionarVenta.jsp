@@ -24,18 +24,22 @@
                     <tr>
                         <th>ID Ventas</th>
                         <th>Cliente</th>
-                        <th>Usuario</th>
+                        <th>Usuario Empleado</th>
                         <th>Pago</th>
                         <th>Fecha de Venta</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach items="${listaVentas}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Venta}" /></td>
-                            <td><c:out value="${item.id_Cliente}" /></td>
-                            <td><c:out value="${item.id_Usuario}" /></td>
-                            <td><c:out value="${item.id_Pago}" /></td>
+                            <!--<td><c:out value="${item.id_Cliente}" /></td>-->
+                            <td><c:out value="${item.cliente}" /></td>
+                            <!--<td><c:out value="${item.id_Usuario}" /></td>-->
+                            <td><c:out value="${item.usuarioEmpleado}" /></td>
+                            <!--<td><c:out value="${item.id_Pago}" /></td>-->
+                            <td><c:out value="${item.pago}" /></td>
                             <td><c:out value="${item.fechaVenta}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">

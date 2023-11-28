@@ -23,7 +23,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID Pago</th>
-                        <th>ID Metodo Pago</th>
+                        <th>Metodo Pago</th>
                         <th>Monto</th>
                         <th>Fecha de pago</th>
                         <th>Acciones</th>
@@ -33,7 +33,8 @@
                     <c:forEach items="${listaPagos}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Pago}" /></td>
-                            <td><c:out value="${item.id_MetodoPago}" /></td>
+                            <!--<td><c:out value="${item.id_MetodoPago}" /></td>-->
+                            <td><c:out value="${item.metodoPago}" /></td>
                             <td><c:out value="${item.monto}" /></td>
                             <td><c:out value="${item.fechaPago}" /></td>
                             <td class="text-center">

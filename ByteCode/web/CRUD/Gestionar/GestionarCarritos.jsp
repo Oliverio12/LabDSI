@@ -23,8 +23,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID Carrito</th>
-                        <th>ID Producto</th>
-                        <th>ID Venta</th>
+                        <th>Producto</th>
+                        <th>Venta</th>
                         <th>Cantidad</th>
                         <th>Fecha Agregado</th>
                         <th>Acciones</th>
@@ -34,8 +34,10 @@
                     <c:forEach items="${listaCarrito}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Carrito}" /></td>
-                            <td><c:out value="${item.id_Producto}" /></td>
-                            <td><c:out value="${item.id_Venta}" /></td>
+                            <!--<td><c:out value="${item.id_Producto}" /></td>-->
+                            <td><c:out value="${item.producto}" /></td>
+                            <!--<td><c:out value="${item.id_Venta}" />   </td>-->
+                            <td><c:out value="${item.venta}" /></td>
                             <td><c:out value="${item.cantidad}" /></td>
                             <td><c:out value="${item.fechaAgregado}" /></td>
                             <td class="text-center">

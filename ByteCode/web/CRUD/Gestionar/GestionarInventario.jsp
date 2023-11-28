@@ -103,7 +103,7 @@
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                                 <button class="open-popup-btn mb-2 btn btn-success" 
-                                        onclick="mostrarDetallesCliente(
+                                        onclick="mostrarDetallesInventario(
                                                         '${item.id_Inventario}',
                                                         '${item.stock}',
                                                         '${item.nombreProducto}',
@@ -154,7 +154,7 @@
                 }
             }
 
-            function mostrarDetallesCliente(id_Inventario, stock, nombreProducto, descripcion, precio, fechaAdquisicion, fechaUltimaActualizacion, categoria, proveedor) {
+            function mostrarDetallesInventario(id_Inventario, stock, nombreProducto, descripcion, precio, fechaAdquisicion, fechaUltimaActualizacion, categoria, proveedor) {
                 document.getElementById('id_Inventario').textContent = id_Inventario;
                 document.getElementById('stock').textContent = stock;
                 document.getElementById('nombreProducto').textContent = nombreProducto;

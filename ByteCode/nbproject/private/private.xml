@@ -4,10 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/src/java/servlet/ServletPrincipal.java</file>
-            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/web/CRUD/Modificar/ModificarCargo.jsp</file>
-            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/src/java/Models/ViewModelProductos.java</file>
-            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/src/java/Models/ViewModelEmpleados.java</file>
-            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/web/CRUD/Gestionar/GestionarProductos.jsp</file>
+            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/src/java/Models/ViewModelCarritoCompras.java</file>
+            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/ByteCode/web/CRUD/Gestionar/GestionarCarritos.jsp</file>
         </group>
     </open-files>
 </project-private>

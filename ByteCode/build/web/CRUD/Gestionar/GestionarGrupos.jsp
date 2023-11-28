@@ -29,25 +29,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                                    <!--Llamas lo del ArrayList -->
                     <c:forEach items="${listaTurno}" var="item">
                         <tr>
-                                            <!--Aca es importante tener igual que en los ViewModels-->
                             <td><c:out value="${item.id_Grupo}" /></td>
                             <td><c:out value="${item.id_Empleado}" /></td>
                             <td><c:out value="${item.turno}" /></td>
                             <td class="text-center">
-                                <!--Tener en cuanta que siempre tienes que asegurar que sean igual a los nombres que usaras-->
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarGrupo.jsp">
-                                    <input type="hidden" name="Id_Cargo" value="${item.id_Grupo}" />
-                                    <input type="hidden" name="cargo" value="${item.turno}" />   
-                                                        <!--Tener en cuenta nombres de clase tambien sean acorde-->          
+                                    <input type="hidden" name="id_Grupo" value="${item.id_Grupo}" />
+                                    <input type="hidden" name="turno" value="${item.turno}" />   
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarGrupo.jsp">
-                                                                <!--Sino lo modificas los item."nombreJavaClass"-->
-                                    <input type="hidden" name="Id_Cargo" value="${item.id_Grupo}" /><!--Ten por seguro un error 500-->
-                                    <input type="hidden" name="cargo" value="${item.turno}" />             
+                                    <input type="hidden" name="id_Grupo" value="${item.id_Grupo}" />
+                                    <input type="hidden" name="turno" value="${item.turno}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>

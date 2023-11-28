@@ -73,7 +73,7 @@
                                 </form>
                                     
                                      <button class="open-popup-btn mb-2 btn btn-success" 
-                                        onclick="mostrarDetallesUsuario(
+                                        onclick="mostrarDetallesMarca(
                                                         '${item.id_Marca}',
                                                         '${item.nombreMarca}'
                                                         )">Ver detalles
@@ -110,7 +110,7 @@
                 }
             }
 
-            function mostrarDetallesUsuario(id_Marca,nombreMarca){
+            function mostrarDetallesMarca(id_Marca,nombreMarca){
                 document.getElementById('id_Marca').textContent = id_Marca;
                 document.getElementById('nombreMarca').textContent = nombreMarca;
                 // Muestra el pop-up

@@ -5,18 +5,29 @@ import java.util.Date;
 public class ViewModelPagos {
      private int id_Pago;
     private int id_MetodoPago;
+    private String metodoPago;
     private double monto;
     private Date fechaPago;
 
     public ViewModelPagos() {
     }
 
-    public ViewModelPagos(int id_Pago, int id_MetodoPago, double monto, Date fechaPago) {
+    public ViewModelPagos(int id_Pago, int id_MetodoPago, String metodoPago,double monto, Date fechaPago) {
         this.id_Pago = id_Pago;
         this.id_MetodoPago = id_MetodoPago;
+        this.metodoPago = metodoPago;
         this.monto = monto;
         this.fechaPago = fechaPago;
     }
+
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
+    }
+    
 
     public int getId_Pago() {
         return id_Pago;

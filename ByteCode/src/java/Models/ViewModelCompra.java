@@ -10,12 +10,13 @@ public class ViewModelCompra {
     private double total;
     private String estado;
     private int id_Empleado;
+    private String empleado;
     private String descripcionCompra;
 
     public ViewModelCompra() {
     }
 
-    public ViewModelCompra(int id_Compra, String proveedor, String nombreCompra, Date fecha_Compra, double total, String estado, int id_Empleado, String descripcionCompra) {
+    public ViewModelCompra(int id_Compra, String proveedor, String nombreCompra, Date fecha_Compra, double total, String estado, int id_Empleado, String empleado, String descripcionCompra) {
         this.id_Compra = id_Compra;
         this.proveedor = proveedor;
         this.nombreCompra = nombreCompra;
@@ -23,8 +24,20 @@ public class ViewModelCompra {
         this.total = total;
         this.estado = estado;
         this.id_Empleado = id_Empleado;
+        this.empleado = empleado;
         this.descripcionCompra = descripcionCompra;
     }
+
+    public String getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(String empleado) {
+        this.empleado = empleado;
+    }
+
+   
+    
 
     public int getId_Compra() {
         return id_Compra;

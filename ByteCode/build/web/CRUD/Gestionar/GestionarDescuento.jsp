@@ -23,7 +23,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID Descuntos</th>
-                        <th>ID Producto</th>
+                        <th>Producto</th>
                         <th>Porcentaje de Descuento</th>
                         <th>Inicio Descuento</th>
                         <th>Final Descuento</th>
@@ -34,7 +34,8 @@
                     <c:forEach items="${listaDescuento}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Descuento}" /></td>
-                            <td><c:out value="${item.id_Producto}" /></td>
+                            <!--<td><c:out value="${item.id_Producto}" /></td>-->
+                            <td><c:out value="${item.producto}" /></td>
                             <td><c:out value="${item.porcentajeDescuento}" /></td>
                             <td><c:out value="${item.fechaInicio}" /></td>
                             <td><c:out value="${item.fechaFinal}" /></td>
