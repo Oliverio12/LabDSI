@@ -17,7 +17,7 @@
 
             <div>
                 <button class="btn btn-primary mb-3" onclick="regresar()">Regresar</button>    
-                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarCargo">Agregar Ventas</a><br><br>
+                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarVenta">Agregar Ventas</a><br><br>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -42,14 +42,20 @@
                             <td><c:out value="${item.pago}" /></td>
                             <td><c:out value="${item.fechaVenta}" /></td>
                             <td class="text-center">
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">
+                                <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarVenta.jsp">
                                     <input type="hidden" name="id_Venta" value="${item.id_Venta}" />
                                     <input type="hidden" name="id_Cliente" value="${item.id_Cliente}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Eliminar/EliminarCargo.jsp">
-                                    <input type="hidden" name="id_Venta" value="${item.id_Pago}" />
+                                <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarVenta.jsp">
+                                    <input type="hidden" name="id_Venta" value="${item.id_Venta}" />
                                     <input type="hidden" name="id_Cliente" value="${item.id_Cliente}" />             
+                                    <input type="hidden" name="cliente" value="${item.cliente}" />             
+                                    <input type="hidden" name="id_Usuario" value="${item.id_Usuario}" />             
+                                    <input type="hidden" name="usuarioEmpleado" value="${item.usuarioEmpleado}" />             
+                                    <input type="hidden" name="id_Pago" value="${item.id_Pago}" />             
+                                    <input type="hidden" name="pago" value="${item.pago}" />             
+                                    <input type="hidden" name="fechaVenta" value="${item.fechaVenta}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>

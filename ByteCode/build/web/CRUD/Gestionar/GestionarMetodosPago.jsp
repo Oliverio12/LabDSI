@@ -17,7 +17,7 @@
 
             <div>
                 <button class="btn btn-primary mb-3" onclick="regresar()">Regresar</button>    
-                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarCargo">Agregar Metodos de pago</a><br><br>
+                <a class="btn btn-primary mb-3" href="/ByteCode?accion=AgregarMetodosPago">Agregar Metodos de pago</a><br><br>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -33,12 +33,12 @@
                             <td><c:out value="${item.idMetodoPago}" /></td>
                             <td><c:out value="${item.metodo}" /></td>
                             <td class="text-center">
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Modificar/ModificarCargo.jsp">
+                                <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarMetodosPago.jsp">
                                     <input type="hidden" name="idMetodoPago" value="${item.idMetodoPago}" />
                                     <input type="hidden" name="metodo" value="${item.metodo}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
-                                <form method="POST" action="/ByteCode/OpcionesUsuario/Eliminar/EliminarCargo.jsp">
+                                <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarMetodosPago.jsp">
                                     <input type="hidden" name="idMetodoPago" value="${item.idMetodoPago}" />
                                     <input type="hidden" name="metodo" value="${item.metodo}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>

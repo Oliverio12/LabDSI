@@ -3,8 +3,11 @@ package Models;
 public class ViewModelDetalleVenta {
     private int id_DetalleVenta;
     private int id_Venta;
+    private String venta;
     private int id_Carrito;
+    private String carrito;
     private int id_Producto;
+    private String producto;
     private int cantidad;
     private double precioUnitario;
     private double total;
@@ -12,16 +15,44 @@ public class ViewModelDetalleVenta {
     public ViewModelDetalleVenta() {
     }
 
-    public ViewModelDetalleVenta(int id_DetalleVenta, int id_Venta, int id_Carrito, int id_Producto, int cantidad, double precioUnitario, double total) {
+    public ViewModelDetalleVenta(int id_DetalleVenta, int id_Venta, String venta, int id_Carrito, String carrito, int id_Producto, String producto, int cantidad, double precioUnitario, double total) {
         this.id_DetalleVenta = id_DetalleVenta;
         this.id_Venta = id_Venta;
+        this.venta = venta;
         this.id_Carrito = id_Carrito;
+        this.carrito = carrito;
         this.id_Producto = id_Producto;
+        this.producto = producto;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.total = total;
     }
 
+    public String getVenta() {
+        return venta;
+    }
+
+    public void setVenta(String venta) {
+        this.venta = venta;
+    }
+
+    public String getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(String carrito) {
+        this.carrito = carrito;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    
     public int getId_DetalleVenta() {
         return id_DetalleVenta;
     }

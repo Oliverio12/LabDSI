@@ -44,11 +44,21 @@
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarCarrito.jsp">
                                     <input type="hidden" name="id_Carrito" value="${item.id_Carrito}" />
                                     <input type="hidden" name="id_Producto" value="${item.id_Producto}" />             
+                                    <input type="hidden" name="producto" value="${item.producto}" />
+                                    <input type="hidden" name="id_Venta" value="${item.id_Venta}" />             
+                                    <input type="hidden" name="venta" value="${item.venta}" />
+                                    <input type="hidden" name="cantidad" value="${item.cantidad}" />             
+                                    <input type="hidden" name="fechaAgregado" value="${item.fechaAgregado}" />              
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarCarrito.jsp">
                                     <input type="hidden" name="id_Carrito" value="${item.id_Carrito}" />
                                     <input type="hidden" name="id_Producto" value="${item.id_Producto}" />             
+                                    <input type="hidden" name="producto" value="${item.producto}" />
+                                    <input type="hidden" name="id_Venta" value="${item.id_Venta}" />             
+                                    <input type="hidden" name="venta" value="${item.venta}" />
+                                    <input type="hidden" name="cantidad" value="${item.cantidad}" />             
+                                    <input type="hidden" name="fechaAgregado" value="${item.fechaAgregado}" />             
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>

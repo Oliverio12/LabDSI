@@ -23,7 +23,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID Grupo</th>
-                        <th>ID Empleado</th>
+                        <th>Empleado</th>
                         <th>Turno</th>
                         <th>Acciones</th>
                     </tr>
@@ -32,7 +32,8 @@
                     <c:forEach items="${listaTurno}" var="item">
                         <tr>
                             <td><c:out value="${item.id_Grupo}" /></td>
-                            <td><c:out value="${item.id_Empleado}" /></td>
+                            <!--<td><c:out value="${item.id_Empleado}" /></td>-->
+                            <td><c:out value="${item.empleado}" /></td>
                             <td><c:out value="${item.turno}" /></td>
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarGrupo.jsp">

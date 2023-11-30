@@ -3,6 +3,7 @@ package Models;
 public class ViewModelDetalleCompra {
     private int id_DetalleCompra;
     private int id_Compra;
+    private String compra;
     private int cantidad;
     private double precioUnitario;
     private String estadoCompra;
@@ -11,15 +12,26 @@ public class ViewModelDetalleCompra {
     public ViewModelDetalleCompra() {
     }
 
-    public ViewModelDetalleCompra(int id_DetalleCompra, int id_Compra, int cantidad, double precioUnitario, String estadoCompra, double total) {
+    public ViewModelDetalleCompra(int id_DetalleCompra, int id_Compra, String compra, int cantidad, double precioUnitario, String estadoCompra, double total) {
         this.id_DetalleCompra = id_DetalleCompra;
         this.id_Compra = id_Compra;
+        this.compra = compra;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.estadoCompra = estadoCompra;
         this.total = total;
     }
 
+    public String getCompra() {
+        return compra;
+    }
+
+    public void setCompra(String compra) {
+        this.compra = compra;
+    }
+
+  
+    
     public int getId_DetalleCompra() {
         return id_DetalleCompra;
     }

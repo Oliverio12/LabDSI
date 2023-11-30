@@ -4,16 +4,30 @@ package Models;
 public class ViewModelGrupos {
     private int id_Grupo;
     private int id_Empleado;
+    private String empleado;
     private String turno;
 
-    public ViewModelGrupos(int id_Grupo, int id_Empleado, String turno) {
-        this.id_Grupo = id_Grupo;
-        this.id_Empleado = id_Empleado;
-        this.turno = turno;
-    }
+    
     public ViewModelGrupos() {
     }
 
+    public ViewModelGrupos(int id_Grupo, int id_Empleado, String empleado, String turno) {
+        this.id_Grupo = id_Grupo;
+        this.id_Empleado = id_Empleado;
+        this.empleado = empleado;
+        this.turno = turno;
+    }
+
+    public String getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(String empleado) {
+        this.empleado = empleado;
+    }
+
+    
+    
     public int getId_Grupo() {
         return id_Grupo;
     }
