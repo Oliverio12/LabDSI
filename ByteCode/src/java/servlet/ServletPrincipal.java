@@ -1594,7 +1594,6 @@ public class ServletPrincipal extends HttpServlet {
     }
     //Fin Update Compra
     
-    
     //Inicio Update Descuento
     public void modificarDescuento(HttpServletRequest request, HttpServletResponse response) {
         //CAPTURA DE VARIABLES
@@ -1671,6 +1670,188 @@ public class ServletPrincipal extends HttpServlet {
     }
     //Fin Update DetalleCompra
     
+    //Inicio Update DetalleVente
+    public void modificarDetalleVenta(HttpServletRequest request, HttpServletResponse response) {
+        //CAPTURA DE VARIABLES
+        String id_DetalleVenta = request.getParameter("id_DetalleVenta");
+        String id_Venta = request.getParameter("id_Venta");
+        String id_Carrito = request.getParameter("id_Carrito");
+        String id_Producto = request.getParameter("id_Producto");
+        String cantidad = request.getParameter("cantidad");
+        String precioUnitario = request.getParameter("precioUnitario");
+        String total = request.getParameter("total");
+      
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+
+                String sql = "update Ventas.DetalleVenta set "
+                        + "Id_Venta='" + id_Venta + "',"
+                        + "Id_Carrito='" + id_Carrito + "',"
+                        + "Id_Producto='" + id_Producto+ "',"
+                        + "Cantidad='" + cantidad + "', "
+                        + "PrecioUnitario='" + precioUnitario + "', "
+                        + "Total='" + total + "' "
+                       
+                        + "Where Id_DetalleVenta='" + id_DetalleVenta + "'";
+
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                int registros = pstmt.executeUpdate();
+                if (registros > 0) {
+                    request.getSession().setAttribute("exito", true);
+                } else {
+                    request.getSession().setAttribute("exito", false);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.getSession().setAttribute("exito", false);
+            ex.printStackTrace();
+        }
+    }
+    //Fin Update DetalleVenta
+    
+    //Inicio Update Grupo
+    public void modificarGrupos(HttpServletRequest request, HttpServletResponse response) {
+        //CAPTURA DE VARIABLES
+        String id_Grupo = request.getParameter("id_Grupo");
+        String id_Empleado = request.getParameter("id_Empleado");
+        String turno = request.getParameter("turno");
+      
+      
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+
+                String sql = "update Grupos.Grupo set "
+                        + "Id_Empleado='" + id_Empleado + "',"
+                        + "Turno='" + turno + "' "
+                       
+                        + "Where Id_Grupo='" + id_Grupo + "'";
+
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                int registros = pstmt.executeUpdate();
+                if (registros > 0) {
+                    request.getSession().setAttribute("exito", true);
+                } else {
+                    request.getSession().setAttribute("exito", false);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.getSession().setAttribute("exito", false);
+            ex.printStackTrace();
+        }
+    }
+    //Fin Update Grupo
+    
+    
+    //Inicio Update MetodosPago
+    public void modificarMetodosPago(HttpServletRequest request, HttpServletResponse response) {
+        //CAPTURA DE VARIABLES
+        String idMetodoPago = request.getParameter("idMetodoPago");
+        String metodo = request.getParameter("metodo");
+      
+      
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+
+                String sql = "update  Ventas.MetodosPago set "
+                        + "Metodo='" + metodo + "' " 
+                        + "Where Id_MetodoPago='" + idMetodoPago + "'";
+
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                int registros = pstmt.executeUpdate();
+                if (registros > 0) {
+                    request.getSession().setAttribute("exito", true);
+                } else {
+                    request.getSession().setAttribute("exito", false);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.getSession().setAttribute("exito", false);
+            ex.printStackTrace();
+        }
+    }
+    //Fin Update MetodosPago
+    
+    
+    //Inicio Update Pago
+    public void modificarPago(HttpServletRequest request, HttpServletResponse response) {
+        //CAPTURA DE VARIABLES
+        String id_Pago = request.getParameter("id_Pago");
+        String id_MetodoPago = request.getParameter("id_MetodoPago");
+        String monto = request.getParameter("monto");
+        String fechaPago = request.getParameter("fechaPago");
+      
+      
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+
+                String sql = "update  Ventas.Pagos set "
+                        + "Id_MetodoPago='" + id_MetodoPago + "', " 
+                        + "Monto='" + monto + "', " 
+                        + "FechaPago='" + fechaPago + "' " 
+                        + "Where Id_Pago='" + id_Pago + "'";
+
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                int registros = pstmt.executeUpdate();
+                if (registros > 0) {
+                    request.getSession().setAttribute("exito", true);
+                } else {
+                    request.getSession().setAttribute("exito", false);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.getSession().setAttribute("exito", false);
+            ex.printStackTrace();
+        }
+    }
+    //Fin Update Pago
+   
+   
+    //Inicio Update Venta
+    public void modificarVenta(HttpServletRequest request, HttpServletResponse response) {
+        //CAPTURA DE VARIABLES
+        String id_Venta = request.getParameter("id_Venta");
+        String id_Cliente = request.getParameter("id_Cliente");
+        String id_Usuario = request.getParameter("id_Usuario");
+        String id_Pago = request.getParameter("id_Pago");
+        String fechaVenta = request.getParameter("fechaVenta");
+
+      
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection conn = DriverManager.getConnection(url)) {
+                request.setAttribute("mensaje_conexion", "Ok!");
+
+                String sql = "update  Ventas.Venta set "
+                        + "Id_Cliente='" + id_Cliente + "', " 
+                        + "Id_Usuario='" + id_Usuario + "', " 
+                        + "Id_Pago='" + id_Pago + "', " 
+                        + "FechaVenta='" + fechaVenta + "' " 
+                        + "Where Id_Venta='" + id_Venta + "'";
+
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                int registros = pstmt.executeUpdate();
+                if (registros > 0) {
+                    request.getSession().setAttribute("exito", true);
+                } else {
+                    request.getSession().setAttribute("exito", false);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            request.getSession().setAttribute("exito", false);
+            ex.printStackTrace();
+        }
+    }
+    //Fin Update Venta
+   
+   
     
     
     
@@ -2376,7 +2557,7 @@ public class ServletPrincipal extends HttpServlet {
             agregarMetodosPago(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarMetodosPago");
         } else if (accion.equals("ModificarMetodosPago")) {
-           // modificarDescuento(request, response);
+           modificarMetodosPago(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarMetodosPago");
         } else if (accion.equals("EliminarMetodosPago")) {
            eliminarMetodosPago(request, response);
@@ -2385,7 +2566,7 @@ public class ServletPrincipal extends HttpServlet {
             agregarPago(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarPago");
         } else if (accion.equals("ModificarPago")) {
-           // modificarDescuento(request, response);
+            modificarPago(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarPago");
         } else if (accion.equals("EliminarPago")) {
             eliminarPago(request, response);
@@ -2394,7 +2575,7 @@ public class ServletPrincipal extends HttpServlet {
             agregarVenta(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarVenta");
         } else if (accion.equals("ModificarVenta")) {
-           // modificarDescuento(request, response);
+           modificarVenta(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarVenta");
         } else if (accion.equals("EliminarVenta")) {
             eliminarVentas(request, response);
@@ -2412,7 +2593,7 @@ public class ServletPrincipal extends HttpServlet {
             agregarDetalleVenta(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarDetalleVenta");
         } else if (accion.equals("ModificarDetalleVenta")) {
-           // modificarDescuento(request, response);
+            modificarDetalleVenta(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarDetalleVentas");
         } else if (accion.equals("EliminarDetalleVenta")) {
             eliminarDetalleVenta(request, response);
@@ -2421,7 +2602,7 @@ public class ServletPrincipal extends HttpServlet {
             agregarGrupo(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=AgregarGrupo");
         } else if (accion.equals("ModificarGrupo")) {
-           // modificarDescuento(request, response);
+           modificarGrupos(request, response);
             response.sendRedirect(request.getContextPath() + "/ServletPrincipal?accion=GestionarGrupos");
         } else if (accion.equals("EliminarGrupo")) {
            eliminarGrupo(request, response);

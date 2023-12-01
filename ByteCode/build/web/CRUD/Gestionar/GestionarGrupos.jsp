@@ -38,12 +38,16 @@
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarGrupo.jsp">
                                     <input type="hidden" name="id_Grupo" value="${item.id_Grupo}" />
+                                    <input type="hidden" name="id_Empleado" value="${item.id_Empleado}" />
+                                    <input type="hidden" name="empleado" value="${item.empleado}" />
                                     <input type="hidden" name="turno" value="${item.turno}" />   
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarGrupo.jsp">
                                     <input type="hidden" name="id_Grupo" value="${item.id_Grupo}" />
-                                    <input type="hidden" name="turno" value="${item.turno}" />             
+                                    <input type="hidden" name="id_Empleado" value="${item.id_Empleado}" />
+                                    <input type="hidden" name="empleado" value="${item.empleado}" />
+                                    <input type="hidden" name="turno" value="${item.turno}" />               
                                     <button type="submit" class="m-2 btn btn-danger">Eliminar</button>
                                 </form>
                             </td>

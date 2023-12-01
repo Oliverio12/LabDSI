@@ -42,7 +42,11 @@
                             <td class="text-center">
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarDescuento.jsp">
                                     <input type="hidden" name="id_Descuento" value="${item.id_Descuento}" />
-                                    <input type="hidden" name="porcentajeDescuento" value="${item.porcentajeDescuento}" />             
+                                    <input type="hidden" name="id_Producto" value="${item.id_Producto}" />
+                                    <input type="hidden" name="producto" value="${item.producto}" />
+                                    <input type="hidden" name="porcentajeDescuento" value="${item.porcentajeDescuento}" />
+                                    <input type="hidden" name="fechaInicio" value="${item.fechaInicio}" />
+                                    <input type="hidden" name="fechaFinal" value="${item.fechaFinal}" />             
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarDescuento.jsp">

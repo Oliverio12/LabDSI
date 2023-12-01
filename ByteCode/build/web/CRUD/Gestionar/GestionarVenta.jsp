@@ -45,6 +45,12 @@
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarVenta.jsp">
                                     <input type="hidden" name="id_Venta" value="${item.id_Venta}" />
                                     <input type="hidden" name="id_Cliente" value="${item.id_Cliente}" />             
+                                    <input type="hidden" name="cliente" value="${item.cliente}" />             
+                                    <input type="hidden" name="id_Usuario" value="${item.id_Usuario}" />             
+                                    <input type="hidden" name="usuarioEmpleado" value="${item.usuarioEmpleado}" />             
+                                    <input type="hidden" name="id_Pago" value="${item.id_Pago}" />             
+                                    <input type="hidden" name="pago" value="${item.pago}" />             
+                                    <input type="hidden" name="fechaVenta" value="${item.fechaVenta}" />               
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarVenta.jsp">

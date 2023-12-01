@@ -41,6 +41,9 @@
                                 <form method="POST" action="/ByteCode/CRUD/Modificar/ModificarPago.jsp">
                                     <input type="hidden" name="id_Pago" value="${item.id_Pago}" />
                                     <input type="hidden" name="id_MetodoPago" value="${item.id_MetodoPago}" />             
+                                    <input type="hidden" name="metodoPago" value="${item.metodoPago}" />             
+                                    <input type="hidden" name="monto" value="${item.monto}" />             
+                                    <input type="hidden" name="fechaPago" value="${item.fechaPago}" />               
                                     <button type="submit" class="btn btn-warning">Modificar</button>
                                 </form>    
                                 <form method="POST" action="/ByteCode/CRUD/Eliminar/EliminarPago.jsp">
