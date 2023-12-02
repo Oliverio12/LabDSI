@@ -1,90 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <title>ByteCode Inicio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>ByteCode Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
 
-    <style>
-        body {
-            background-color: #f0f8ff;
-        }
+            body {
+                font-family: 'Raleway', sans-serif;
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(to right, #ff3366, #00ccff);
+                color: #ecf0f1;
+            }
 
-        .container {
-            background-color: #ffffff;
-            margin-top: 50px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+            .container {
+                max-width: 800px;
+                margin: 50px auto;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            }
 
-        h1 {
-            color: #4caf50;
-        }
+            .welcome {
+                color: #2ecc71;
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
 
-        nav {
-            margin-top: 30px;
-        }
+            .part1, .part2 {
+                text-align: center;
+                margin-top: 30px;
+            }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+            a {
+                text-decoration: none;
+                color: #fff;
+                padding: 15px 30px;
+                border-radius: 10px;
+                display: inline-block;
+                transition: background-color 0.3s ease;
+                font-size: 18px;
+            }
 
-        nav li {
-            display: inline-block;
-            margin-right: 15px;
-        }
+            .part1 a {
+                background-color: #e74c3c;
+                box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+            }
 
-        nav a {
-            text-decoration: none;
-            color: #ff6f61;
-            font-weight: bold;
-            font-size: 18px;
-        }
+            .part2 a {
+                background-color: #27ae60;
+                box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+            }
 
-        nav a:hover {
-            background-color: aqua;
-            border-radius: 10px
-        }
-    </style>
-</head>
-<body>
+            a:hover {
+                transform: scale(1.1);
+                opacity: 0.9;
+            }
 
-    <div class="container text-center">
-        <h1 class="mt-5">¡Bienvenido a ByteCode!</h1>
+        </style>
+    </head>
+    <body>
 
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode">Inicio</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=Login">Login</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarCargos">Gestionar Cargos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarEmpleados">Gestionar Empleados</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarUsuarios">Gestionar Usuarios</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarClientes">Gestionar Clientes</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarInventario">Gestionar Inventario</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarProductos">Gestionar Productos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarDescuento">Gestionar Descuento</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarCompra">Gestionar Compra</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarDetalleCompra">Gestionar Detalle Compra</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarMetodosPago">Gestionar Metodos de pago</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarPago">Gestionar Pagos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarVenta">Gestionar Ventas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarCarritos">Gestionar Carritos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarDetalleVentas">Gestionar Detalle Ventas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarGrupos">Gestionar Grupos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarMarca">Gestionar Marca Producto</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ByteCode?accion=GestionarCategoria">Gestionar Categoria Producto</a></li>
+        <div class="container">
+            <h1 class="welcome">¡Bienvenido a ByteCode!</h1>
+            <div class="part1">
+                <a  href="/ByteCode">Inicio</a>
+
+            </div>
+            <div class="part2">
+                <a  href="/ByteCode?accion=Login">Login</a>
+
+            </div>
 
 
-            </ul>
-        </nav>
-    </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+    </body>
 </html>

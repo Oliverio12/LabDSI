@@ -76,6 +76,11 @@
                 </tbody>            
             </table>
         </div>
+
+        <div>
+            <%@include file="footer.html" %>
+        </div>
+
         <script>
             function regresar() {
                 window.location.href = "index.html";

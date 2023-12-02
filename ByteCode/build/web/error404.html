@@ -1,21 +1,50 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Error 404</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
 
-<html>
-    <head>
-        <title> Error 404</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Lo sentimos, no pudimos encotrar la pagina que buscas</h1>
-        
-        <h2><strong>Error 404</strong></h2>
-        
-        <button onclick="regresar()">Regresar</button>        
-        <script>
-            function regresar(){
-                window.history.back();
-            }
-        </script>
-    </body>
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #ff5757;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lo sentimos, no pudimos encontrar la página que buscas.</h1>
+    <h2><strong>Error 404</strong></h2>
+    <button onclick="regresar()">Regresar</button>
+
+    <script>
+        function regresar() {
+            window.history.back();
+        }
+    </script>
+</body>
 </html>

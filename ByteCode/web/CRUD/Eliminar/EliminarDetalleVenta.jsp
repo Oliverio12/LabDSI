@@ -14,22 +14,22 @@
 
         <form method="POST" action="/ByteCode/ServletPrincipal?accion=EliminarDetalleVenta">
             <div class="form-group">
-                <label class="font-weight-bold">ID Cargo ${param.id_DetalleVenta}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.id_Venta}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.venta}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.id_Carrito}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.carrito}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.id_Producto}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.producto}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.cantidad}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.precioUnitario}</label><br>
-                <label class="font-weight-bold">Cargo: ${param.total}</label><br>
+                <label class="font-weight-bold">ID Detalle venta ${param.id_DetalleVenta}</label><br>
+                <label class="font-weight-bold">ID Venta: ${param.id_Venta}</label><br>
+                <label class="font-weight-bold">Venta: ${param.venta}</label><br>
+                <label class="font-weight-bold">ID Carrito: ${param.id_Carrito}</label><br>
+                <label class="font-weight-bold">Carrito: ${param.carrito}</label><br>
+                <label class="font-weight-bold">ID Producto: ${param.id_Producto}</label><br>
+                <label class="font-weight-bold">Producto: ${param.producto}</label><br>
+                <label class="font-weight-bold">Cantidad: ${param.cantidad}</label><br>
+                <label class="font-weight-bold">Precio Unitario: ${param.precioUnitario}</label><br>
+                <label class="font-weight-bold">Total: ${param.total}</label><br>
                 
                 <input type="hidden" name="id_DetalleVenta" id="id_DetalleVenta" value="${param.id_DetalleVenta}" /><br><br>
                     <button type="submit" class="btn btn-danger" onclick="return confirm('¿Desea eliminar el detalle de la venta?')">Eliminar</button><br><br>
             </div>
             <div>
-                <a class="btn btn-secondary" href="/ByteCode/?accion=GestionarDetallesVentas">Regresar</a><br><br>
+                <a class="btn btn-secondary" href="/ByteCode/?accion=GestionarDetalleVentas">Regresar</a><br><br>
             </div>             
         </form>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -2447,7 +2447,11 @@ public class ServletPrincipal extends HttpServlet {
 
             try (PrintWriter print = response.getWriter()) {
                 if (Usuario.equals("Admin") && Contrasenia.equals("root")) {
-                    request.getRequestDispatcher("/index.html").forward(request, response);
+                    request.getRequestDispatcher("/Paneles/PanelAdministrador.jsp").forward(request, response);
+                }else if (Usuario.equals("Empleado") && Contrasenia.equals("emp")) {
+                    request.getRequestDispatcher("/Paneles/PanelEmpleado.jsp").forward(request, response);
+                }else if (Usuario.equals("Cliente") && Contrasenia.equals("cliente")) {
+                    request.getRequestDispatcher("/Paneles/PanelCliente.jsp").forward(request, response);
                 } else {
                     print.println("<!DOCTYPE html>");
                     print.println("<html>");
